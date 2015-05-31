@@ -11,11 +11,12 @@ public class VideoPlayPause : MonoBehaviour {
 	public Slider videoPosition;
 	public float shot1StartVal;
 	public float shot2StartVal;
-
+	public float[] startTimecodes;
 
 
 	private int videoDuration, currentDuration; //in ms
-	private bool shot1Done, shot2Done = false;
+	private bool shotsDone;
+	private int shotCounter;
 
 	void Start()
 	{
@@ -24,6 +25,16 @@ public class VideoPlayPause : MonoBehaviour {
 		currentDuration = player.GetDuration ();
 		//cd = gameObject.GetComponent<Cardboard> ();
 
+		//startTimecodes  = new float[startTimecodes.Length]; //does not need to be initialized, unity seems to do it under the hood for a public one
+		shotsDone = false;
+
+
+		Debug.Log ("TimeCodes for Shots: ");
+		for (int i=0; i < startTimecodes.Length; i++) {
+			Debug.Log (" >> " + startTimecodes [i]);
+		}
+
+		shotCounter = 1; //skip the first one
 	}
 
 
@@ -46,16 +57,23 @@ public class VideoPlayPause : MonoBehaviour {
 			cd.Recenter();
 		}*/
 
-		//if (player.GetSeekPosition () >= (int)(shot2StartVal * 1000) && shot1Done == false) 
-		if (player.GetSeekPosition () >= 47500 && shot1Done == false) {
-			shot1Done = true;
-			cd.Recenter();
-			Debug.Log("Recenter for Shot2 done");
+		//if (player.GetSeekPosition () >= (int)(startTimecodes [shotCounter] * 1000.00) && shotDone [shotCounter] == false) 
+		if (player.GetSeekPosition () >= (int)(startTimecodes [shotCounter] * 1000.00) && shotsDone == false) 
+		{ 
+				
+			Cardboard.SDK.Recenter ();
+
+			Debug.Log ("Recenter for Shot #" + shotCounter + " done");
+
+			if(shotCounter == (startTimecodes.Length - 1))
+				shotsDone = true;
+			else
+				shotCounter++;
+
 		}
+	
 
 	}
-
-
 
 
 }

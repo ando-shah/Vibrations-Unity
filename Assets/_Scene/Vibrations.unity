@@ -195,6 +195,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297663421}
+--- !u!114 &385519448 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400012, guid: b8b03d395f5734e98af91ccf44f9bf47,
+    type: 2}
+  m_PrefabInternal: {fileID: 189613043}
+  m_Script: {fileID: 11500000, guid: a40b544b8c3553c40852ae7ad35a9343, type: 3}
 --- !u!1 &463459982
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,11 +540,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5868da7325d384bd0b74c6b00d109d17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: {fileID: 0}
-  player: {fileID: 0}
+  cd: {fileID: 385519448}
+  player: {fileID: 764680268}
   videoPosition: {fileID: 2076330345}
   shot1StartVal: 0
   shot2StartVal: 0
+  startTimecodes:
+  - 0
+  - 5
+  - 10
 --- !u!4 &836087087
 Transform:
   m_ObjectHideFlags: 0
