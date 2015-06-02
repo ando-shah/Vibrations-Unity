@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VideoPlayPause : MonoBehaviour {
 
 	public Cardboard cd;
-	public MediaPlayerCtrl player;
+	public MediaPlayerCtrl Player;
 	public Slider videoPosition;
 	public float shot1StartVal;
 	public float shot2StartVal;
@@ -22,7 +22,7 @@ public class VideoPlayPause : MonoBehaviour {
 	{
 		//Debug for cardboard less testing
 		Cardboard.SDK.TapIsTrigger = true;
-		currentDuration = player.GetDuration ();
+		currentDuration = Player.GetDuration ();
 		//cd = gameObject.GetComponent<Cardboard> ();
 
 		//startTimecodes  = new float[startTimecodes.Length]; //does not need to be initialized, unity seems to do it under the hood for a public one
@@ -35,6 +35,12 @@ public class VideoPlayPause : MonoBehaviour {
 		}
 
 		shotCounter = 1; //skip the first one
+
+
+		Cardboard.SDK.TapIsTrigger = true;
+
+
+
 	}
 
 
@@ -45,20 +51,8 @@ public class VideoPlayPause : MonoBehaviour {
 
 	void Update()
 	{
-		//videoPosition.value = (player.GetSeekPosition () / player.GetDuration ()) * 1000 * Time.deltaTime;
-		//Text.value
-		//videoPosition.value = player.GetSeekPosition() * /23000 1000;
-
-		//Debug.Log ("Current position = " + player.GetSeekPosition () + "Full Duration = " + player.GetDuration ());
-		//videoPosition.value = 50;
-
-		/*if (player.GetSeekPosition () >= 10000 && scene1Done == false) {
-			scene1Done = true;
-			cd.Recenter();
-		}*/
-
-		//if (player.GetSeekPosition () >= (int)(startTimecodes [shotCounter] * 1000.00) && shotDone [shotCounter] == false) 
-		if (player.GetSeekPosition () >= (int)(startTimecodes [shotCounter] * 1000.00) && shotsDone == false) 
+		//videoPosition.value = (Player.GetSeekPosition () / Player.GetDuration ()) * 1000 * Time.deltaTime;
+		if (Player.GetSeekPosition () >= (int)(startTimecodes [shotCounter] * 1000.00) && shotsDone == false) 
 		{ 
 				
 			Cardboard.SDK.Recenter ();

@@ -26,7 +26,7 @@ public class AutoTrigger : MonoBehaviour {
 			delay = Time.time + 2.0f; 
 		}
 
-		if ((Cardboard.SDK.CardboardTriggered && isLookedAt) || (isLookedAt && Time.time>delay)) 
+		if ((Cardboard.SDK.Triggered && isLookedAt) || (isLookedAt && Time.time>delay)) 
 		{ 
 			//cd.ToggleVRMode();
 			delay = Time.time + 2.0f;
