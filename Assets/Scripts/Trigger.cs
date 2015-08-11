@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Trigger : MonoBehaviour {
 
 	public MediaPlayerCtrl Player;
-	public GameObject HUD;
+	//public GameObject HUD;
 	private Image img;
 	private Color clr;
 
@@ -24,7 +24,7 @@ public class Trigger : MonoBehaviour {
 		//img = HUD.GetComponentsInChildren<Image>["CanvasHUD"] ();
 		//img = HUD.GetComponent ("LowerBar") as Image;
 		//clr = img.color;
-		HUD.SetActive (false);
+		//HUD.SetActive (false);
 
 	}
 
@@ -37,14 +37,14 @@ public class Trigger : MonoBehaviour {
 		if (Player.GetCurrentState () == MediaPlayerCtrl.MEDIAPLAYER_STATE.PAUSED) {
 			Player.Play ();
 
-			HUD.SetActive(false)	;
+			//HUD.SetActive(false)	;
 
 			Debug.Log ("\n Play");
 
 
 		} else if (Player.GetCurrentState () == MediaPlayerCtrl.MEDIAPLAYER_STATE.PLAYING) {
 			Player.Pause ();
-			HUD.SetActive(true);
+			//HUD.SetActive(true);
 
 			Debug.Log ("\n Pause");
 

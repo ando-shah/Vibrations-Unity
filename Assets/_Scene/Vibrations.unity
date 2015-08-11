@@ -482,7 +482,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
 --- !u!114 &764680268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +522,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 836087087}
   - 114: {fileID: 836087086}
+  - 114: {fileID: 836087088}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -541,14 +542,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cd: {fileID: 385519448}
-  player: {fileID: 764680268}
+  Player: {fileID: 764680268}
   videoPosition: {fileID: 2076330345}
-  shot1StartVal: 0
-  shot2StartVal: 0
   startTimecodes:
   - 0
-  - 5
-  - 10
+  - 65
+  - 79.6999969
+  - 91
+  - 119
+  - 162.100006
+  - 217.699997
+  - 237
+  - 303.200012
 --- !u!4 &836087087
 Transform:
   m_ObjectHideFlags: 0
@@ -561,6 +566,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &836087088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836087085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9782bd984d82348b2b8d89bb6a75dd8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 764680268}
 --- !u!1 &886893791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!1 &2023647594
 GameObject:
   m_ObjectHideFlags: 0

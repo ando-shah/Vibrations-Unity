@@ -9,14 +9,19 @@ public class VideoPlayPause : MonoBehaviour {
 	public Cardboard cd;
 	public MediaPlayerCtrl Player;
 	public Slider videoPosition;
-	public float shot1StartVal;
-	public float shot2StartVal;
+	//public float shot1StartVal;
+	//public float shot2StartVal;
 	public float[] startTimecodes;
 
+	//Removed for compiling Vibrations Scene
+	//public GameObject HUD;
+	//public Image progressBar;
 
 	private int videoDuration, currentDuration; //in ms
 	private bool shotsDone;
 	private int shotCounter;
+	private Image img;
+
 
 	void Start()
 	{
@@ -39,7 +44,8 @@ public class VideoPlayPause : MonoBehaviour {
 
 		Cardboard.SDK.TapIsTrigger = true;
 
-
+		//Removed for compiling Vibrations Scene
+		//img = HUD.GetComponent ("ProgressBar") as Image;
 
 	}
 
@@ -66,6 +72,15 @@ public class VideoPlayPause : MonoBehaviour {
 
 		}
 	
+
+		float progress = (((float)Player.GetSeekPosition () * 100f)/ (float)Player.GetDuration ()) * Time.deltaTime;
+
+		//Removed for compiling Vibrations Scene
+		//progressBar.fillAmount = progress;
+
+		//Testing code
+		//progressBar.fillAmount = Mathf.Lerp (progressBar.fillAmount, 1f, Time.deltaTime * .5f);
+		Debug.Log (" {" + Player.GetSeekPosition () + "},{" + Player.GetDuration () + "}, {" + progress + "}\n");
 
 	}
 
